@@ -14,7 +14,7 @@ class MarketiApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Marketi',
       onGenerateRoute: routing.onGenerateRoute,
-      initialRoute: Routes.onboarding,
+      initialRoute: Routes.splash,
       theme: AppTheme.lightTheme,
     );
   }
