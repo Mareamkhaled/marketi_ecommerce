@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../../core/Routing/routes.dart';
-import '../../../onboarding/ui/screens/onboarding_screen.dart';
 import '../widgets/splash_body.dart';
 import 'package:animate_do/animate_do.dart';
 
