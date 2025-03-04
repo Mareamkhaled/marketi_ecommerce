@@ -8,4 +8,10 @@ class AppStrings {
   static const String onboardingThreeTitle = 'Wonderful User Experience';
   static const String onboardingThreeDesc =
       'Start exploring now and experience the convenience of online shopping at its best.';
+  static const String logIn = "Let’s sign you in.";
+  static const String signUp = "Let’s sign you up.";
+  static const String logInWelcome = "Welcome back, You’ve been missed";
+  static const String signUpWelcome = "Be with our family ";
+  static const String dontHaveAnAccount= "don’t have an account? ";
+  static const String registerNow= "Register now";    
 }

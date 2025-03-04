@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
+import 'package:marketi_ecommerce/core/Routing/routes.dart';
 import 'package:marketi_ecommerce/features/onboarding/ui/widgets/pages_navigate.dart';
 import '../../../../core/resources/app_images.dart';
 import '../../../../core/resources/app_strings.dart';
@@ -51,11 +52,7 @@ class OnboardingScreen extends HookWidget {
                   onPressedOne: () =>
                       PagesNavigate().navigateToPreviousPage(pageController),
                   onPressedTwo: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TestScreen(),
-                        ));
+                    Navigator.pushReplacementNamed(context, Routes.login);
                   },
                   image: Assets.assetsImagesOnboardingThreePng,
                   title: AppStrings.onboardingThreeTitle,
