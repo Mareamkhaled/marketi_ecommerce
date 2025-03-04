@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
-import 'package:marketi_ecommerce/core/Routing/routes.dart';
-import 'package:marketi_ecommerce/features/onboarding/ui/widgets/pages_navigate.dart';
+import '../../../../core/Routing/routes.dart';
+import '../widgets/pages_navigate.dart';
 import '../../../../core/resources/app_images.dart';
 import '../../../../core/resources/app_strings.dart';
-import '../../../../test_screen.dart';
-
 import '../widgets/my_smooth_indicator.dart';
 import '../widgets/on_boarding_item.dart';
 

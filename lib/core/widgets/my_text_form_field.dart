@@ -18,7 +18,7 @@ class MyTextFormField extends StatelessWidget {
       this.onChanged,
       required this.prefixIcon,
       this.inputFormatters,
-      this.isObscureText = false,this.suffixIcon, this.obscure});
+      this.isObscureText = false,this.suffixIcon, this.obscure, this.keyboardType});
 
   final String? text;
   final String hintText;
@@ -31,6 +31,7 @@ class MyTextFormField extends StatelessWidget {
   final Widget prefixIcon;
   final Widget? suffixIcon;
   final bool? obscure;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +43,7 @@ class MyTextFormField extends StatelessWidget {
                 .copyWith(color: AppColors.myBlack, fontSize: getFontSize(context, 14))),
         Gap(15),
         TextFormField(
+          keyboardType: keyboardType,
           obscureText: isObscureText,
           controller: controller,
           onChanged: onChanged,

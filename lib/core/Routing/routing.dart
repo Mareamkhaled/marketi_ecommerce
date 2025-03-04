@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marketi_ecommerce/features/auth/login/ui/views/login_screen.dart';
+import 'package:marketi_ecommerce/features/auth/signup/ui/views/signup_screen.dart';
 import 'package:marketi_ecommerce/features/onboarding/ui/screens/onboarding_screen.dart';
 import 'package:marketi_ecommerce/features/splash/ui/screens/splash_screen.dart';
 import 'package:marketi_ecommerce/test_screen.dart';
@@ -17,6 +18,8 @@ class Routing {
         return MaterialPageRoute(builder: (context) => OnboardingScreen());
       case Routes.login:
         return MaterialPageRoute(builder: (context) => LoginScreen());
+      case Routes.signup:
+        return MaterialPageRoute(builder: (context) => SignupScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => NoRouteScreen());
