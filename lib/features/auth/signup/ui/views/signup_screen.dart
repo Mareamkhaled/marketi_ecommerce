@@ -51,6 +51,7 @@ class SignupScreen extends StatelessWidget {
               }),
               Gap(10),
               LogInOptions(),
+              SizedBox(height: 20.h),
             ],
           ),
         ),

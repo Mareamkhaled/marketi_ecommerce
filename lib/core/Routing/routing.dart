@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:marketi_ecommerce/features/auth/create_new_password.dart/view/congratulation_screen.dart';
+import 'package:marketi_ecommerce/features/auth/create_new_password.dart/view/create_new_password.dart';
+import 'package:marketi_ecommerce/features/auth/forget_password/views/forget_password_with_email.dart';
+import 'package:marketi_ecommerce/features/auth/forget_password/views/forget_password_with_phone.dart';
 import 'package:marketi_ecommerce/features/auth/login/ui/views/login_screen.dart';
 import 'package:marketi_ecommerce/features/auth/signup/ui/views/signup_screen.dart';
+import 'package:marketi_ecommerce/features/auth/vertification/views/vertification_code_with_email.dart';
+import 'package:marketi_ecommerce/features/auth/vertification/views/vertification_code_with_phone.dart';
 import 'package:marketi_ecommerce/features/onboarding/ui/screens/onboarding_screen.dart';
 import 'package:marketi_ecommerce/features/splash/ui/screens/splash_screen.dart';
 import 'package:marketi_ecommerce/test_screen.dart';
@@ -20,6 +26,18 @@ class Routing {
         return MaterialPageRoute(builder: (context) => LoginScreen());
       case Routes.signup:
         return MaterialPageRoute(builder: (context) => SignupScreen());
+      case Routes.forgetWithPhone:
+        return MaterialPageRoute(builder: (context) => ForgetPasswordWithPhone());
+      case Routes.forgetWithEmail:
+        return MaterialPageRoute(builder: (context) => ForgetPasswordWithEmail());
+      case Routes.vertificationWithPhone:
+        return MaterialPageRoute(builder: (context) => VertificationCodeWithPhone());
+      case Routes.vertificationWithEmail:
+        return MaterialPageRoute(builder: (context) => VertificationCodeWithEmail());
+      case Routes.createNewPassword:
+        return MaterialPageRoute(builder: (context) => CreateNewPassword());
+      case Routes.congratulationScreen:
+        return MaterialPageRoute(builder: (context) => CongratulationScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => NoRouteScreen());

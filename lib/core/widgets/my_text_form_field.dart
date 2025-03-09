@@ -12,7 +12,7 @@ class MyTextFormField extends StatelessWidget {
     
       {super.key,
       this.text,
-      required this.hintText,
+      this.hintText,
       this.controller,
       this.validator,
       this.onChanged,
@@ -21,7 +21,7 @@ class MyTextFormField extends StatelessWidget {
       this.isObscureText = false,this.suffixIcon, this.obscure, this.keyboardType});
 
   final String? text;
-  final String hintText;
+  final String? hintText;
   // final Widget prefixIcon;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
