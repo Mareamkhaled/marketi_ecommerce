@@ -37,31 +37,34 @@ class LoginScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            Image.asset(
-              Assets.assetsImagesLogoPng,
-              height: 200.h,
-            ),
-            LogInForm(
-              formKey: _formKey,
-              emailController: _emailController,
-              passwordController: _passwordController,
-            ),
-            Gap(5.h),
-            ForgetPassword(),
-            Gap(10.h),
-            CustomButton.primary(
-              text: "Log In",
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {}
-              },
-            ),
-            Gap(10.h),
-            LogInOptions(),
-            Gap(5.h),
-            SignUpOption()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Image.asset(
+                Assets.assetsImagesLogoPng,
+                height: 200.h,
+              ),
+              LogInForm(
+                formKey: _formKey,
+                emailController: _emailController,
+                passwordController: _passwordController,
+              ),
+              Gap(5.h),
+              ForgetPassword(),
+              Gap(10.h),
+              CustomButton.primary(
+                text: "Log In",
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {}
+                },
+              ),
+              Gap(10.h),
+              LogInOptions(),
+              // Gap(5.h),
+              SignUpOption(),
+              Gap(50.h)
+            ],
+          ),
         ),
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import '../../../../../core/helpers/form_validator.dart';
 import '../../../../../core/widgets/my_text_form_field.dart';
 
@@ -24,43 +23,45 @@ class _LogInFormState extends State<LogInForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Form(
-          key: widget.formKey,
-          child: Column(
-            children: [
-              MyTextFormField(
-                controller: widget.emailController,
-                validator: FormValidator.validateEmail,
-                hintText: "enter your email",
-                prefixIcon: Icon(Icons.email),
-                text: "",
-              ),
-              // Gap(30),
-              MyTextFormField(
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isObsecure = !isObsecure;
-                    });
-                  },
-                  icon: isObsecure
-                      ? Icon(Icons.visibility_off)
-                      : Icon(Icons.visibility),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Form(
+            key: widget.formKey,
+            child: Column(
+              children: [
+                MyTextFormField(
+                  controller: widget.emailController,
+                  validator: FormValidator.validateEmail,
+                  hintText: "enter your email",
+                  prefixIcon: Icon(Icons.email),
+                  text: "",
                 ),
-                controller: widget.passwordController,
-                validator: FormValidator.validatePassword,
-                hintText: "enter your password",
-                prefixIcon: Icon(Icons.lock),
-                text: "",
-                isObscureText: isObsecure,
-              ),
-            ],
+                // Gap(30),
+                MyTextFormField(
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        isObsecure = !isObsecure;
+                      });
+                    },
+                    icon: isObsecure
+                        ? Icon(Icons.visibility_off)
+                        : Icon(Icons.visibility),
+                  ),
+                  controller: widget.passwordController,
+                  validator: FormValidator.validatePassword,
+                  hintText: "enter your password",
+                  prefixIcon: Icon(Icons.lock),
+                  text: "",
+                  isObscureText: isObsecure,
+                ),
+              ],
+            ),
           ),
-        ),
-        Gap(20),
-      ],
+          // Gap(100.h),
+        ],
+      ),
     );
   }
 }
