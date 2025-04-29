@@ -8,11 +8,6 @@ part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
-  //   final TextEditingController loginEmailController =
-  //     TextEditingController();
-  //  final TextEditingController loginPasswordController =
-  //     TextEditingController();
-  //  final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   signin() async {
     emit(Loginloading());
     try {
