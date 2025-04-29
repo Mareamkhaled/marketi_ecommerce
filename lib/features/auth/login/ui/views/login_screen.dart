@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import '../../logic/cubit/login_cubit.dart';
 
 import '../../../../../core/Routing/routes.dart';
-// import '../../../../../core/helpers/auth_text_controllers.dart';
+import '../../../../../core/helpers/auth_text_controllers.dart';
 import '../../../../../core/helpers/get_font_size.dart';
 import '../../../../../core/resources/app_colors.dart';
 import '../../../../../core/resources/app_images.dart';
 import '../../../../../core/resources/app_style.dart';
 import '../../../../../core/widgets/custom_button.dart';
+import '../../logic/cubit/login_cubit.dart';
 import '../widgets/forget_password.dart';
 import '../widgets/log_in_options.dart';
 import '../widgets/login_form.dart';
@@ -64,10 +63,10 @@ class LoginScreen extends StatelessWidget {
                     height: 200.h,
                   ),
                   LogInForm(
-                    emailController: context.read<LoginCubit>().loginEmailController,
+                    emailController: AuthTextControllers.loginEmailController,
                     passwordController:
-                        context.read<LoginCubit>().loginPasswordController,
-                    formKey: context.read<LoginCubit>().loginFormKey,
+                        AuthTextControllers.loginPasswordController,
+                    formKey: AuthTextControllers.loginFormKey,
 
                     // context.read<SigninCubit>().signInPasswordController,
                   ),
@@ -97,7 +96,7 @@ class LoginScreen extends StatelessWidget {
   }
 
   void validateThenLogin(BuildContext context) {
-    if (context.read<LoginCubit>().loginFormKey.currentState!.validate()) {
+    if (AuthTextControllers.loginFormKey.currentState!.validate()) {
       context.read<LoginCubit>().signin();
     }
   }
