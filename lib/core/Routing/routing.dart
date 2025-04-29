@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,6 +14,7 @@ import '../../features/auth/vertification/views/vertification_code_with_phone.da
 import '../../features/onboarding/ui/screens/onboarding_screen.dart';
 import '../../features/splash/ui/screens/splash_screen.dart';
 import '../../test_screen.dart';
+import '../api/dio_consumer.dart';
 import 'routes.dart';
 
 class Routing {
@@ -28,7 +30,7 @@ class Routing {
       case Routes.login:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
-            create: (context) => LoginCubit(),
+            create: (context) => LoginCubit(api: DioConsumer(Dio())),
             child: LoginScreen(),
           ),
         );

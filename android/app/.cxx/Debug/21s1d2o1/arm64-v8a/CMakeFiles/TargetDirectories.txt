@@ -1,0 +1,2 @@
+D:/marketi_ecommerce/android/app/.cxx/Debug/21s1d2o1/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/marketi_ecommerce/android/app/.cxx/Debug/21s1d2o1/arm64-v8a/CMakeFiles/rebuild_cache.dir
