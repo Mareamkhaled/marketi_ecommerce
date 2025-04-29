@@ -71,10 +71,10 @@ class LoginScreen extends StatelessWidget {
                     // context.read<SigninCubit>().signInPasswordController,
                   ),
                   Gap(5.h),
-                  ForgetPassword(),
+                  const ForgetPassword(),
                   Gap(10.h),
                   state is Loginloading
-                      ? CircularProgressIndicator()
+                      ? const CircularProgressIndicator()
                       : CustomButton.primary(
                           text: "Log In",
                           onPressed: () {
@@ -82,9 +82,9 @@ class LoginScreen extends StatelessWidget {
                           },
                         ),
                   Gap(10.h),
-                  LogInOptions(),
+                  const LogInOptions(),
                   // Gap(5.h),
-                  SignUpOption(),
+                  const SignUpOption(),
                   Gap(50.h)
                 ],
               ),

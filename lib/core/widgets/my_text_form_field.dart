@@ -43,7 +43,7 @@ class MyTextFormField extends StatelessWidget {
         Text(text!,
             style: AppStyles.semiBold.copyWith(
                 color: AppColors.myBlack, fontSize: getFontSize(context, 14))),
-        Gap(15),
+        const Gap(15),
         TextFormField(
           keyboardType: keyboardType,
           obscureText: isObscureText,
@@ -55,7 +55,7 @@ class MyTextFormField extends StatelessWidget {
             fillColor: AppColors.myWhite,
             filled: true,
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 width: 2,
                 color: AppColors.primaryColor,
               ),

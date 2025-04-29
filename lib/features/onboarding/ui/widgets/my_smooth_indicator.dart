@@ -10,7 +10,7 @@ Widget mySmoothIndicator(PageController pageController) {
       controller: pageController,
       count: 3,
       axisDirection: Axis.horizontal,
-      effect: WormEffect(
+      effect: const WormEffect(
         spacing: 6,
         radius: 10.0,
         dotWidth: 15,

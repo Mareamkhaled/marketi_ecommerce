@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_ecommerce/core/Routing/routes.dart';
-import 'package:marketi_ecommerce/core/resources/app_images.dart';
-import 'package:marketi_ecommerce/core/widgets/custom_app_bar.dart';
-import 'package:marketi_ecommerce/core/widgets/custom_button.dart';
-import 'package:marketi_ecommerce/core/widgets/my_text_form_field.dart';
+import '../../../../core/Routing/routes.dart';
+import '../../../../core/resources/app_images.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
+import '../../../../core/widgets/custom_button.dart';
+import '../../../../core/widgets/my_text_form_field.dart';
 
 import '../../../../core/resources/app_colors.dart';
 import '../../../../core/resources/app_style.dart';
@@ -14,9 +14,9 @@ class CreateNewPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Create New Password"),
+      appBar: const CustomAppBar(title: "Create New Password"),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           spacing: 20,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -28,11 +28,11 @@ class CreateNewPassword extends StatelessWidget {
                   .copyWith(fontSize: 16, color: AppColors.myBlack),
               textAlign: TextAlign.center,
             ),
-            MyTextFormField(
+            const MyTextFormField(
               prefixIcon: Icon(Icons.lock),
               text: "Password",
             ),
-            MyTextFormField(
+            const MyTextFormField(
               prefixIcon: Icon(Icons.lock),
               text: "Confirm Password",
             ),

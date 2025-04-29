@@ -62,7 +62,7 @@ class OnboardingScreen extends HookWidget {
             ),
           ),
           mySmoothIndicator(pageController),
-          Gap(30)
+         const Gap(30)
         ],
       ),
     );

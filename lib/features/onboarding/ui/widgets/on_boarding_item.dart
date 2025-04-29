@@ -26,7 +26,7 @@ class OnBoardingItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
             Expanded(
@@ -34,7 +34,7 @@ class OnBoardingItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(image: AssetImage(image)),
-                  Gap(20),
+                  const Gap(20),
                   Text(
                     title,
                     style: AppStyles.bold.copyWith(
@@ -42,7 +42,7 @@ class OnBoardingItem extends StatelessWidget {
                         fontSize: getFontSize(context, 20)),
                     textAlign: TextAlign.center,
                   ),
-                  Gap(20),
+                  const Gap(20),
                   Text(
                     description,
                     style: AppStyles.regular.copyWith(
@@ -53,7 +53,7 @@ class OnBoardingItem extends StatelessWidget {
                 ],
               ),
             ),
-            Gap(20),
+            const Gap(20),
             // CustomButton.primary(text: "Next", onPressed: onPressed)
             // Gap(20.h),
             Row(

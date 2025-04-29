@@ -34,7 +34,7 @@ class _LogInFormState extends State<LogInForm> {
                   controller: widget.emailController,
                   validator: FormValidator.validateEmail,
                   hintText: "enter your email",
-                  prefixIcon: Icon(Icons.email),
+                  prefixIcon: const Icon(Icons.email),
                   text: "",
                 ),
                 // Gap(30),
@@ -46,13 +46,13 @@ class _LogInFormState extends State<LogInForm> {
                       });
                     },
                     icon: isObsecure
-                        ? Icon(Icons.visibility_off)
-                        : Icon(Icons.visibility),
+                        ? const Icon(Icons.visibility_off)
+                        : const Icon(Icons.visibility),
                   ),
                   controller: widget.passwordController,
                   validator: FormValidator.validatePassword,
                   hintText: "enter your password",
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: const Icon(Icons.lock),
                   text: "",
                   isObscureText: isObsecure,
                 ),

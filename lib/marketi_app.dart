@@ -13,7 +13,7 @@ class MarketiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(375, 812), // Set the design size here
+      designSize: const Size(375, 812), // Set the design size here
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {

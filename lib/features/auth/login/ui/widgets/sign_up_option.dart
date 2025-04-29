@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_ecommerce/core/Routing/routes.dart';
-import 'package:marketi_ecommerce/core/helpers/get_font_size.dart';
-import 'package:marketi_ecommerce/core/resources/app_style.dart';
+import '../../../../../core/Routing/routes.dart';
+import '../../../../../core/helpers/get_font_size.dart';
+import '../../../../../core/resources/app_style.dart';
 
 import '../../../../../core/resources/app_colors.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:marketi_ecommerce/core/widgets/custom_app_bar.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../../core/resources/app_colors.dart';
@@ -15,7 +15,7 @@ class VertificationCodeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: CustomAppBar(title: "Verification code"),
+      appBar:const CustomAppBar(title: "Verification code"),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(

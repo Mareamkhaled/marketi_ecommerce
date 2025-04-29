@@ -14,7 +14,7 @@ class ForgetPasswordWithPhone extends StatelessWidget {
       text: "Please enter your phone number to receive a verification code",
       textForm: "Phone",
       isVisible: true,
-      icon: Icon(Icons.phone),
+      icon: const Icon(Icons.phone),
     );
   }
 }

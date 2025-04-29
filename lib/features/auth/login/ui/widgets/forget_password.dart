@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_ecommerce/features/auth/login/ui/widgets/remember_me.dart';
+import 'remember_me.dart';
 
 import '../../../../../core/Routing/routes.dart';
 import '../../../../../core/helpers/get_font_size.dart';
@@ -17,7 +17,7 @@ class ForgetPassword extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
      children: [
-      RememberMe(),
+      const RememberMe(),
       TextButton(
         onPressed: () {
           Navigator.pushNamed(context, Routes.forgetWithPhone);

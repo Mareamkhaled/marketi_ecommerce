@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_ecommerce/core/resources/app_images.dart';
-import 'package:marketi_ecommerce/core/widgets/custom_button.dart';
+import '../../../../core/resources/app_images.dart';
+import '../../../../core/widgets/custom_button.dart';
 
 import '../../../../core/Routing/routes.dart';
 import '../../../../core/resources/app_colors.dart';
@@ -13,7 +13,7 @@ class CongratulationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           spacing: 20,
           mainAxisAlignment: MainAxisAlignment.center,

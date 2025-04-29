@@ -39,9 +39,9 @@ class _SignupFormState extends State<SignupForm> {
               controller: widget.nameController,
               text: "Your Name",
               hintText: "full name",
-              prefixIcon: Icon(Icons.person_2_outlined)),
+              prefixIcon: const Icon(Icons.person_2_outlined)),
           Gap(5.h),
-          MyTextFormField(
+          const MyTextFormField(
               text: "Username",
               hintText: "Username",
               prefixIcon: Icon(Icons.person)),
@@ -51,7 +51,7 @@ class _SignupFormState extends State<SignupForm> {
             controller: widget.phoneController,
             text: "phone number",
             hintText: "",
-            prefixIcon: Icon(Icons.mobile_friendly),
+            prefixIcon: const Icon(Icons.mobile_friendly),
             keyboardType: TextInputType.phone,
           ),
           Gap(5.h),
@@ -60,14 +60,14 @@ class _SignupFormState extends State<SignupForm> {
               controller: widget.emailController,
               text: "email",
               hintText: "You@gmail.com",
-              prefixIcon: Icon(Icons.email_outlined)),
+              prefixIcon: const Icon(Icons.email_outlined)),
           Gap(5.h),
           MyTextFormField(
             validator: FormValidator.validatePassword,
             controller: widget.passwordController,
             text: "password",
             hintText: "enter ur password",
-            prefixIcon: Icon(Icons.lock),
+            prefixIcon: const Icon(Icons.lock),
             suffixIcon: IconButton(
               onPressed: () {
                 setState(() {
@@ -75,8 +75,8 @@ class _SignupFormState extends State<SignupForm> {
                 });
               },
               icon: isObsecure
-                  ? Icon(Icons.visibility_off)
-                  : Icon(Icons.visibility),
+                  ? const Icon(Icons.visibility_off)
+                  : const Icon(Icons.visibility),
             ),
             isObscureText: isObsecure,
           ),
@@ -87,7 +87,7 @@ class _SignupFormState extends State<SignupForm> {
             controller: widget.confirmPasswordController,
             text: "confirm password",
             hintText: "re_enter ur password",
-            prefixIcon: Icon(Icons.lock),
+            prefixIcon: const Icon(Icons.lock),
             suffixIcon: IconButton(
               onPressed: () {
                 setState(() {
@@ -95,8 +95,8 @@ class _SignupFormState extends State<SignupForm> {
                 });
               },
               icon: isObsecureTwo
-                  ? Icon(Icons.visibility_off)
-                  : Icon(Icons.visibility),
+                  ? const Icon(Icons.visibility_off)
+                  : const Icon(Icons.visibility),
             ),
             isObscureText: isObsecureTwo,
           )

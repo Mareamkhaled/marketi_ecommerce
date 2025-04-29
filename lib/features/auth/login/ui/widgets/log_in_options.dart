@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:marketi_ecommerce/features/auth/login/ui/widgets/my_container.dart';
+import 'my_container.dart';
 import '../../../../../core/helpers/get_font_size.dart';
 import '../../../../../core/resources/app_colors.dart';
 import '../../../../../core/resources/app_images.dart';
@@ -22,8 +22,8 @@ class LogInOptions extends StatelessWidget {
                           .copyWith(color: AppColors.myGrey, fontSize: getFontSize(context, 12)),
                     ),
                   ),
-                  Gap(15),
-                  Row(
+                  const Gap(15),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       MyContainer(img: Assets.assetsGooglePng),

@@ -1,6 +1,9 @@
+// ignore_for_file: prefer_relative_imports
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marketi_ecommerce/features/auth/signup/logic/cubit/signup_cubit.dart';
 
 import '../../features/auth/create_new_password.dart/view/congratulation_screen.dart';
 import '../../features/auth/create_new_password.dart/view/create_new_password.dart';
@@ -22,39 +25,51 @@ class Routing {
   Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.splash:
-        return MaterialPageRoute(builder: (context) => SplashScreen());
+        return MaterialPageRoute(builder: (context) => const SplashScreen());
       case Routes.test:
-        return MaterialPageRoute(builder: (context) => TestScreen());
+        return MaterialPageRoute(builder: (context) => const TestScreen());
       case Routes.onboarding:
         return MaterialPageRoute(builder: (context) => OnboardingScreen());
       case Routes.login:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
-            create: (context) => LoginCubit(api: DioConsumer(Dio())),
+            create: (context) => LoginCubit(
+              api: DioConsumer(
+                Dio(),
+              ),
+            ),
             child: LoginScreen(),
           ),
         );
       case Routes.signup:
-        return MaterialPageRoute(builder: (context) => SignupScreen());
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => SignupCubit(
+                    api: DioConsumer(
+                      Dio(),
+                    ),
+                  ),
+                  child: const SignupScreen(),
+                ));
       case Routes.forgetWithPhone:
         return MaterialPageRoute(
-            builder: (context) => ForgetPasswordWithPhone());
+            builder: (context) => const ForgetPasswordWithPhone());
       case Routes.forgetWithEmail:
         return MaterialPageRoute(
-            builder: (context) => ForgetPasswordWithEmail());
+            builder: (context) => const ForgetPasswordWithEmail());
       case Routes.vertificationWithPhone:
         return MaterialPageRoute(
-            builder: (context) => VertificationCodeWithPhone());
+            builder: (context) => const VertificationCodeWithPhone());
       case Routes.vertificationWithEmail:
         return MaterialPageRoute(
-            builder: (context) => VertificationCodeWithEmail());
+            builder: (context) => const VertificationCodeWithEmail());
       case Routes.createNewPassword:
-        return MaterialPageRoute(builder: (context) => CreateNewPassword());
+        return MaterialPageRoute(builder: (context) => const CreateNewPassword());
       case Routes.congratulationScreen:
-        return MaterialPageRoute(builder: (context) => CongratulationScreen());
+        return MaterialPageRoute(builder: (context) => const CongratulationScreen());
 
       default:
-        return MaterialPageRoute(builder: (_) => NoRouteScreen());
+        return MaterialPageRoute(builder: (_) => const NoRouteScreen());
     }
   }
 }
@@ -64,7 +79,7 @@ class NoRouteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         body: Center(
       child: Text("No Route Found"),
     ));

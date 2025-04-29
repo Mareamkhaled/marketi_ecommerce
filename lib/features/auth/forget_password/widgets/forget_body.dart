@@ -24,7 +24,7 @@ class ForgetBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Forget Password"),
+      appBar: const CustomAppBar(title: "Forget Password"),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:marketi_ecommerce/core/errors/exceptions.dart';
+import '../../../../../core/errors/exceptions.dart';
 
 import '../../../../../core/api/api_consumer.dart';
 import '../../../../../core/api/end_points.dart';

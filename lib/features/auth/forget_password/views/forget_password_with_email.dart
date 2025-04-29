@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_ecommerce/core/resources/app_images.dart';
+import '../../../../core/resources/app_images.dart';
 import '../../../../core/Routing/routes.dart';
 import '../widgets/forget_body.dart';
 
@@ -15,7 +15,7 @@ class ForgetPasswordWithEmail extends StatelessWidget {
       text: "Please enter your email address to receive a verification code",
       textForm: "Email",
       isVisible: false,
-      icon: Icon(Icons.email),
+      icon: const Icon(Icons.email),
     );
   }
 }

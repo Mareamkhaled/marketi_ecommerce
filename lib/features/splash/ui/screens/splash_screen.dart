@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
         body: FadeIn(
       animate: true,
       duration: const Duration(seconds: 3),
-      child: SplashBody(),
+      child: const SplashBody(),
       onFinish: (direction) =>
           Navigator.pushReplacementNamed(context, Routes.onboarding),
     ));

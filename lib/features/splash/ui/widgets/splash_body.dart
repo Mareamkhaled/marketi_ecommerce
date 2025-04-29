@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_ecommerce/core/resources/app_images.dart';
+import '../../../../core/resources/app_images.dart';
 
 class SplashBody extends StatelessWidget {
   const SplashBody({super.key});
