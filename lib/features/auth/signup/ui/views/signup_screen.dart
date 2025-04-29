@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import '../../../../../core/Routing/routes.dart';
 import '../../../../../core/resources/app_images.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../login/ui/widgets/log_in_options.dart';
@@ -45,10 +46,13 @@ class SignupScreen extends StatelessWidget {
                 confirmPasswordController: _confirmPasswordController,
               ),
               Gap(15),
-              CustomButton.primary(text: "Sign up", onPressed: () {
-                if (_formKey.currentState!.validate()) {}
-                  
-              }),
+              CustomButton.primary(
+                  text: "Sign up",
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      Navigator.pushNamed(context, Routes.test);
+                    }
+                  }),
               Gap(10),
               LogInOptions(),
               SizedBox(height: 20.h),

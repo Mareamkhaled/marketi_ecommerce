@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_ecommerce/features/auth/create_new_password.dart/view/congratulation_screen.dart';
-import 'package:marketi_ecommerce/features/auth/create_new_password.dart/view/create_new_password.dart';
-import 'package:marketi_ecommerce/features/auth/forget_password/views/forget_password_with_email.dart';
-import 'package:marketi_ecommerce/features/auth/forget_password/views/forget_password_with_phone.dart';
-import 'package:marketi_ecommerce/features/auth/login/ui/views/login_screen.dart';
-import 'package:marketi_ecommerce/features/auth/signup/ui/views/signup_screen.dart';
-import 'package:marketi_ecommerce/features/auth/vertification/views/vertification_code_with_email.dart';
-import 'package:marketi_ecommerce/features/auth/vertification/views/vertification_code_with_phone.dart';
-import 'package:marketi_ecommerce/features/onboarding/ui/screens/onboarding_screen.dart';
-import 'package:marketi_ecommerce/features/splash/ui/screens/splash_screen.dart';
-import 'package:marketi_ecommerce/test_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../features/auth/create_new_password.dart/view/congratulation_screen.dart';
+import '../../features/auth/create_new_password.dart/view/create_new_password.dart';
+import '../../features/auth/forget_password/views/forget_password_with_email.dart';
+import '../../features/auth/forget_password/views/forget_password_with_phone.dart';
+import '../../features/auth/login/logic/cubit/login_cubit.dart';
+import '../../features/auth/login/ui/views/login_screen.dart';
+import '../../features/auth/signup/ui/views/signup_screen.dart';
+import '../../features/auth/vertification/views/vertification_code_with_email.dart';
+import '../../features/auth/vertification/views/vertification_code_with_phone.dart';
+import '../../features/onboarding/ui/screens/onboarding_screen.dart';
+import '../../features/splash/ui/screens/splash_screen.dart';
+import '../../test_screen.dart';
 import 'routes.dart';
 
 class Routing {
@@ -23,17 +26,26 @@ class Routing {
       case Routes.onboarding:
         return MaterialPageRoute(builder: (context) => OnboardingScreen());
       case Routes.login:
-        return MaterialPageRoute(builder: (context) => LoginScreen());
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => LoginCubit(),
+            child: LoginScreen(),
+          ),
+        );
       case Routes.signup:
         return MaterialPageRoute(builder: (context) => SignupScreen());
       case Routes.forgetWithPhone:
-        return MaterialPageRoute(builder: (context) => ForgetPasswordWithPhone());
+        return MaterialPageRoute(
+            builder: (context) => ForgetPasswordWithPhone());
       case Routes.forgetWithEmail:
-        return MaterialPageRoute(builder: (context) => ForgetPasswordWithEmail());
+        return MaterialPageRoute(
+            builder: (context) => ForgetPasswordWithEmail());
       case Routes.vertificationWithPhone:
-        return MaterialPageRoute(builder: (context) => VertificationCodeWithPhone());
+        return MaterialPageRoute(
+            builder: (context) => VertificationCodeWithPhone());
       case Routes.vertificationWithEmail:
-        return MaterialPageRoute(builder: (context) => VertificationCodeWithEmail());
+        return MaterialPageRoute(
+            builder: (context) => VertificationCodeWithEmail());
       case Routes.createNewPassword:
         return MaterialPageRoute(builder: (context) => CreateNewPassword());
       case Routes.congratulationScreen:

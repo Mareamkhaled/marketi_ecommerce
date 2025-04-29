@@ -9,7 +9,6 @@ import '../resources/app_style.dart';
 
 class MyTextFormField extends StatelessWidget {
   const MyTextFormField(
-    
       {super.key,
       this.text,
       this.hintText,
@@ -18,7 +17,10 @@ class MyTextFormField extends StatelessWidget {
       this.onChanged,
       required this.prefixIcon,
       this.inputFormatters,
-      this.isObscureText = false,this.suffixIcon, this.obscure, this.keyboardType});
+      this.isObscureText = false,
+      this.suffixIcon,
+      this.obscure,
+      this.keyboardType});
 
   final String? text;
   final String? hintText;
@@ -39,8 +41,8 @@ class MyTextFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(text!,
-            style: AppStyles.semiBold
-                .copyWith(color: AppColors.myBlack, fontSize: getFontSize(context, 14))),
+            style: AppStyles.semiBold.copyWith(
+                color: AppColors.myBlack, fontSize: getFontSize(context, 14))),
         Gap(15),
         TextFormField(
           keyboardType: keyboardType,
@@ -50,21 +52,26 @@ class MyTextFormField extends StatelessWidget {
           validator: validator,
           inputFormatters: inputFormatters,
           decoration: InputDecoration(
-            // focusColor: AppColors.myWhite,
-            // hoverColor: AppColors.myGrey,
-            // errorStyle: ,
             fillColor: AppColors.myWhite,
             filled: true,
-            focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.myGrey),borderRadius: BorderRadius.circular(10)),
-             prefixIcon: prefixIcon,
-             suffixIcon: obscure == true ? null :  suffixIcon,
-               
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                width: 2,
+                color: AppColors.primaryColor,
+              ),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            prefixIcon: prefixIcon,
+            suffixIcon: obscure == true ? null : suffixIcon,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
             hintText: hintText,
             hintStyle: AppStyles.regular.copyWith(
-                color: AppColors.myGrey, fontSize: getFontSize(context, 12) )
-              // hintStyle: AppStyle.fontPoppinsRegular14Grey
-              ),
+              color: AppColors.myGrey,
+              fontSize: getFontSize(context, 12),
+            ),
+          ),
         ),
       ],
     );
