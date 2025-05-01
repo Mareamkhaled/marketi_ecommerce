@@ -6,7 +6,6 @@ import '../../../../core/api/end_points.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/helpers/auth_text_controllers.dart';
 
-
 part 'forget_password_state.dart';
 
 class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
@@ -34,6 +33,24 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
       emit(CodeActivated());
     } on ServerException catch (e) {
       emit(CodeActivationFailed(message: e.errorModel.errorMessage));
+    }
+  }
+
+  createNewPassword(String email) async {
+    emit(CreateNewPasswordLoading());
+    try {
+      await api.post(
+        EndPoints.resetPassword,
+        data: {
+          "email": email,
+          "password": AuthTextControllers.newPasswordController.text,
+          "confirmPassword":
+              AuthTextControllers.confirmNewPasswordController.text,
+        },
+      );
+      emit(CreateNewPasswordSuccess());
+    } on ServerException catch (e) {
+      emit(CreateNewPasswordFailed(message: e.errorModel.errorMessage));
     }
   }
 }

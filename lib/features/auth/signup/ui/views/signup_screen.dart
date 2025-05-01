@@ -47,22 +47,15 @@ class SignupScreen extends StatelessWidget {
                     Assets.assetsImagesLogoPng,
                     height: 200.h,
                   ),
-                  SignupForm(
-                    formKey: AuthTextControllers.signUpFormKey,
-                    emailController: AuthTextControllers.signUpEmailController,
-                    passwordController:
-                        AuthTextControllers.signUpPasswordController,
-                    nameController: AuthTextControllers.signUpNameController,
-                    phoneController: AuthTextControllers.signUpPhoneController,
-                    confirmPasswordController:
-                        AuthTextControllers.signUpConfirmPasswordController,
-                  ),
+                  const SignupForm(),
                   const Gap(15),
-                 state is SignupLoading ? const CircularProgressIndicator() : CustomButton.primary(
-                      text: "Sign up",
-                      onPressed: () {
-                        validateThensignup(context);
-                      }),
+                  state is SignupLoading
+                      ? const CircularProgressIndicator()
+                      : CustomButton.primary(
+                          text: "Sign up",
+                          onPressed: () {
+                            validateThensignup(context);
+                          }),
                   const Gap(10),
                   const LogInOptions(),
                   SizedBox(height: 20.h),
@@ -74,7 +67,8 @@ class SignupScreen extends StatelessWidget {
       },
     );
   }
-   void validateThensignup(BuildContext context) {
+
+  void validateThensignup(BuildContext context) {
     if (AuthTextControllers.signUpFormKey.currentState!.validate()) {
       context.read<SignupCubit>().signUp();
     }

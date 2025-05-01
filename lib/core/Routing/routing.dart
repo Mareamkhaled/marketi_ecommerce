@@ -61,13 +61,6 @@ class Routing {
         return MaterialPageRoute(
             builder: (context) => const ForgetPasswordWithPhone());
 
-      // case Routes.forgetPasswordWithEmail:
-      //   return MaterialPageRoute(
-      //       builder: (context) => BlocProvider(
-      //             create: (context) =>
-      //                 ForgetPasswordCubit(api: DioConsumer(Dio())),
-      //             child: const ForgetPasswordWithEmail(),
-      //           ));
       case Routes.forgetPasswordWithEmail:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
@@ -79,12 +72,7 @@ class Routing {
       case Routes.vertificationWithPhone:
         return MaterialPageRoute(
             builder: (context) => const VertificationCodeWithPhone());
-// case Routes.vertificationWithEmail:
-      //   return MaterialPageRoute(
-      //       builder: (context) => BlocProvider.value(
-      //             value: context.read<ForgetPasswordCubit>(),
-      //             child: const VertificationCodeWithEmail(),
-      //           ));
+
       case Routes.vertificationWithEmail:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
@@ -93,13 +81,16 @@ class Routing {
           ),
         );
 
-      // case Routes.createNewPassword:
-      //   return MaterialPageRoute(
-      //       builder: (context) => const CreateNewPassword());
-
       case Routes.createNewPassword:
         return MaterialPageRoute(
-          builder: (context) => const CreateNewPassword(),
+          builder: (context) {
+            final args = settings.arguments as Map<String, dynamic>?;
+            final email = args?['email'];
+            return BlocProvider(
+              create: (context) => ForgetPasswordCubit(api: DioConsumer(Dio())),
+              child: CreateNewPassword(email: email),
+            );
+          },
         );
 
       case Routes.congratulationScreen:

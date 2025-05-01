@@ -20,10 +20,10 @@ class VertificationCodeWithEmail extends StatelessWidget {
     return BlocConsumer<ForgetPasswordCubit, ForgetPasswordState>(
       listener: (context, state) {
         if (state is CodeActivated && context.mounted) {
-          Navigator.pushNamed(
-            context,
-            Routes.createNewPassword,
-          );
+          String email =
+              AuthTextControllers.forgetPasswordWithEmailController.text;
+          Navigator.pushNamed(context, Routes.createNewPassword,
+              arguments: {"email": email});
         } else if (state is CodeActivationFailed) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -44,7 +44,8 @@ class VertificationCodeWithEmail extends StatelessWidget {
               spacing: 20,
               children: [
                 const ImageAndText(image: Assets.assetsVertificationWithEmail),
-                Text(AuthTextControllers.forgetPasswordWithEmailController.text,style: AppStyles.regular
+                Text(AuthTextControllers.forgetPasswordWithEmailController.text,
+                    style: AppStyles.regular
                         .copyWith(fontSize: 16, color: AppColors.myGrey)),
                 MyPinCode(
                   controller: AuthTextControllers.pinCodeController,

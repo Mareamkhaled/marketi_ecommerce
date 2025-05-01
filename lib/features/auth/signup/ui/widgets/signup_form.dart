@@ -1,25 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import '../../../../../core/helpers/auth_text_controllers.dart';
 import '../../../../../core/helpers/form_validator.dart';
 import '../../../../../core/widgets/my_text_form_field.dart';
 
 class SignupForm extends StatefulWidget {
-  const SignupForm(
-      {super.key,
-      required this.formKey,
-      required this.emailController,
-      required this.passwordController,
-      required this.nameController,
-      required this.phoneController,
-      required this.confirmPasswordController});
-
-  final GlobalKey<FormState> formKey;
-  final TextEditingController emailController;
-  final TextEditingController passwordController;
-  final TextEditingController confirmPasswordController;
-  final TextEditingController nameController;
-  final TextEditingController phoneController;
+  const SignupForm({
+    super.key,
+  });
 
   @override
   State<SignupForm> createState() => _SignupFormState();
@@ -32,11 +21,11 @@ class _SignupFormState extends State<SignupForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-        key: widget.formKey,
+        key: AuthTextControllers.signUpFormKey,
         child: Column(children: [
           MyTextFormField(
               validator: FormValidator.validateName,
-              controller: widget.nameController,
+              controller: AuthTextControllers.signUpNameController,
               text: "Your Name",
               hintText: "full name",
               prefixIcon: const Icon(Icons.person_2_outlined)),
@@ -48,7 +37,7 @@ class _SignupFormState extends State<SignupForm> {
           Gap(5.h),
           MyTextFormField(
             validator: FormValidator.validatePhoneNumber,
-            controller: widget.phoneController,
+            controller: AuthTextControllers.signUpPhoneController,
             text: "phone number",
             hintText: "",
             prefixIcon: const Icon(Icons.mobile_friendly),
@@ -57,14 +46,14 @@ class _SignupFormState extends State<SignupForm> {
           Gap(5.h),
           MyTextFormField(
               validator: FormValidator.validateEmail,
-              controller: widget.emailController,
+              controller: AuthTextControllers.signUpEmailController,
               text: "email",
               hintText: "You@gmail.com",
               prefixIcon: const Icon(Icons.email_outlined)),
           Gap(5.h),
           MyTextFormField(
             validator: FormValidator.validatePassword,
-            controller: widget.passwordController,
+            controller: AuthTextControllers.signUpPasswordController,
             text: "password",
             hintText: "enter ur password",
             prefixIcon: const Icon(Icons.lock),
@@ -83,8 +72,8 @@ class _SignupFormState extends State<SignupForm> {
           Gap(5.h),
           MyTextFormField(
             validator: (value) => FormValidator.confirmPassword(
-                widget.passwordController.text, value),
-            controller: widget.confirmPasswordController,
+                AuthTextControllers.signUpPasswordController.text, value),
+            controller: AuthTextControllers.signUpConfirmPasswordController,
             text: "confirm password",
             hintText: "re_enter ur password",
             prefixIcon: const Icon(Icons.lock),
