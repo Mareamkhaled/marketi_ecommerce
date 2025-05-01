@@ -17,6 +17,9 @@ class AuthTextControllers {
       TextEditingController();
   static final TextEditingController forgetPasswordWithEmailController=
       TextEditingController();
+  static final TextEditingController pinCodeController=
+      TextEditingController();
+
 
   static final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   static final GlobalKey<FormState> signUpFormKey = GlobalKey<FormState>();

@@ -16,7 +16,7 @@ class ForgetPasswordWithEmail extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<ForgetPasswordCubit, ForgetPasswordState>(
       listener: (context, state) {
-        if (state is CodeSentState) {
+        if (state is CodeSentState && context.mounted) {
           Navigator.pushNamed(
             context,
             Routes.vertificationWithEmail,
@@ -59,7 +59,10 @@ class ForgetPasswordWithEmail extends StatelessWidget {
                       : CustomButton.primary(
                           text: "Send Code",
                           onPressed: () {
-                            context.read<ForgetPasswordCubit>().sendForgetPasswordCode();
+                            context
+                                .read<ForgetPasswordCubit>()
+                                .sendForgetPasswordCode()
+                                ;
                           },
                         ),
                 ],

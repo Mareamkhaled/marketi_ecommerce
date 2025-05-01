@@ -61,24 +61,46 @@ class Routing {
         return MaterialPageRoute(
             builder: (context) => const ForgetPasswordWithPhone());
 
+      // case Routes.forgetPasswordWithEmail:
+      //   return MaterialPageRoute(
+      //       builder: (context) => BlocProvider(
+      //             create: (context) =>
+      //                 ForgetPasswordCubit(api: DioConsumer(Dio())),
+      //             child: const ForgetPasswordWithEmail(),
+      //           ));
       case Routes.forgetPasswordWithEmail:
         return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                  create: (context) => ForgetPasswordCubit(api: DioConsumer(Dio())),
-                  child: const ForgetPasswordWithEmail(),
-                ));
+          builder: (context) => BlocProvider(
+            create: (context) => ForgetPasswordCubit(api: DioConsumer(Dio())),
+            child: const ForgetPasswordWithEmail(),
+          ),
+        );
 
       case Routes.vertificationWithPhone:
         return MaterialPageRoute(
             builder: (context) => const VertificationCodeWithPhone());
-
+// case Routes.vertificationWithEmail:
+      //   return MaterialPageRoute(
+      //       builder: (context) => BlocProvider.value(
+      //             value: context.read<ForgetPasswordCubit>(),
+      //             child: const VertificationCodeWithEmail(),
+      //           ));
       case Routes.vertificationWithEmail:
         return MaterialPageRoute(
-            builder: (context) => const VertificationCodeWithEmail());
+          builder: (context) => BlocProvider(
+            create: (context) => ForgetPasswordCubit(api: DioConsumer(Dio())),
+            child: const VertificationCodeWithEmail(),
+          ),
+        );
+
+      // case Routes.createNewPassword:
+      //   return MaterialPageRoute(
+      //       builder: (context) => const CreateNewPassword());
 
       case Routes.createNewPassword:
         return MaterialPageRoute(
-            builder: (context) => const CreateNewPassword());
+          builder: (context) => const CreateNewPassword(),
+        );
 
       case Routes.congratulationScreen:
         return MaterialPageRoute(

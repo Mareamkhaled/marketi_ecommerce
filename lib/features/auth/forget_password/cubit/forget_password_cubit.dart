@@ -6,6 +6,7 @@ import '../../../../core/api/end_points.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/helpers/auth_text_controllers.dart';
 
+
 part 'forget_password_state.dart';
 
 class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
@@ -20,6 +21,19 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
       emit(CodeSentState());
     } on ServerException catch (e) {
       emit(CodesentFailedState(message: e.errorModel.errorMessage));
+    }
+  }
+
+  vertificationCodeWithEmail() async {
+    emit(ActivatingCode());
+    try {
+      await api.post(EndPoints.activeResetPass, data: {
+        "email": AuthTextControllers.forgetPasswordWithEmailController.text,
+        "code": AuthTextControllers.pinCodeController.text,
+      });
+      emit(CodeActivated());
+    } on ServerException catch (e) {
+      emit(CodeActivationFailed(message: e.errorModel.errorMessage));
     }
   }
 }

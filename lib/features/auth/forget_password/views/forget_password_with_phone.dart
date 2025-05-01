@@ -39,7 +39,12 @@ class ForgetPasswordWithPhone extends StatelessWidget {
               ),
               CustomButton.primary(
                 text: "Send Code",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    Routes.vertificationWithPhone,
+                  );
+                },
               ),
               TextButton(
                 onPressed: () {

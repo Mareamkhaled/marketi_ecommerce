@@ -14,3 +14,12 @@ final class CodesentFailedState extends ForgetPasswordState {
   final String message;
   const CodesentFailedState({required this.message});
 }
+
+final class ActivatingCode extends ForgetPasswordState {}
+
+final class CodeActivated extends ForgetPasswordState {}
+
+final class CodeActivationFailed extends ForgetPasswordState {
+  final String message;
+  const CodeActivationFailed({required this.message});
+}
