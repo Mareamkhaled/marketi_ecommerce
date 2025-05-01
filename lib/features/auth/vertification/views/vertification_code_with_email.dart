@@ -40,28 +40,30 @@ class VertificationCodeWithEmail extends StatelessWidget {
           appBar: const CustomAppBar(title: "Verification code"),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              spacing: 20,
-              children: [
-                const ImageAndText(image: Assets.assetsVertificationWithEmail),
-                Text(AuthTextControllers.forgetPasswordWithEmailController.text,
-                    style: AppStyles.regular
-                        .copyWith(fontSize: 16, color: AppColors.myGrey)),
-                MyPinCode(
-                  controller: AuthTextControllers.pinCodeController,
-                ),
-                state is ActivatingCode
-                    ? const CircularProgressIndicator()
-                    : CustomButton.primary(
-                        text: "Verify code",
-                        onPressed: () {
-                          context
-                              .read<ForgetPasswordCubit>()
-                              .vertificationCodeWithEmail();
-                        },
-                      ),
-                const TimeAndReset()
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                spacing: 20,
+                children: [
+                  const ImageAndText(image: Assets.assetsVertificationWithEmail),
+                  Text(AuthTextControllers.forgetPasswordWithEmailController.text,
+                      style: AppStyles.regular
+                          .copyWith(fontSize: 16, color: AppColors.myGrey)),
+                  MyPinCode(
+                    controller: AuthTextControllers.pinCodeController,
+                  ),
+                  state is ActivatingCode
+                      ? const CircularProgressIndicator()
+                      : CustomButton.primary(
+                          text: "Verify code",
+                          onPressed: () {
+                            context
+                                .read<ForgetPasswordCubit>()
+                                .vertificationCodeWithEmail();
+                          },
+                        ),
+                  const TimeAndReset()
+                ],
+              ),
             ),
           ),
         );
