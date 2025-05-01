@@ -29,7 +29,11 @@ class Routing {
         return MaterialPageRoute(builder: (context) => const SplashScreen());
 
       case Routes.test:
-        return MaterialPageRoute(builder: (context) => const TestScreen());
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => LoginCubit(api: DioConsumer(Dio())),
+                  child: const TestScreen(),
+                ));
 
       case Routes.onboarding:
         return MaterialPageRoute(builder: (context) => OnboardingScreen());
@@ -42,7 +46,7 @@ class Routing {
                 Dio(),
               ),
             ),
-            child: LoginScreen(),
+            child: const LoginScreen(),
           ),
         );
 

@@ -17,15 +17,13 @@ import '../widgets/login_form.dart';
 import '../widgets/sign_up_option.dart';
 
 class LoginScreen extends StatelessWidget {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  LoginScreen({super.key});
+ const LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSucces) {
-          Navigator.pushNamed(context, Routes.test);
+          Navigator.pushReplacementNamed(context, Routes.test);
         } else if (state is LoginFailed) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -62,14 +60,7 @@ class LoginScreen extends StatelessWidget {
                     Assets.assetsImagesLogoPng,
                     height: 200.h,
                   ),
-                  LogInForm(
-                    emailController: AuthTextControllers.loginEmailController,
-                    passwordController:
-                        AuthTextControllers.loginPasswordController,
-                    formKey: AuthTextControllers.loginFormKey,
-
-                    // context.read<SigninCubit>().signInPasswordController,
-                  ),
+                  const LogInForm(),
                   Gap(5.h),
                   const ForgetPassword(),
                   Gap(10.h),

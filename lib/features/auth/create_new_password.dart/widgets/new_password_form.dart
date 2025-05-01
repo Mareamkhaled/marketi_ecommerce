@@ -14,12 +14,14 @@ class NewPasswordForm extends StatelessWidget {
       child: Column(
         children: [
           MyTextFormField(
+            obscure: true,
             controller: AuthTextControllers.newPasswordController,
             validator: FormValidator.validatePassword,
             prefixIcon: const Icon(Icons.lock),
             text: "Password",
           ),
           MyTextFormField(
+            obscure: true,
             controller: AuthTextControllers.confirmNewPasswordController,
             validator: FormValidator.validatePassword,
             prefixIcon: const Icon(Icons.lock),

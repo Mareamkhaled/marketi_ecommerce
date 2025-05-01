@@ -28,8 +28,6 @@ class ForgetPasswordWithPhone extends StatelessWidget {
                 image: Assets.assetsForgetWithPhone,
                 text:
                     "Please enter your phone number to receive a verification code",
-
-                // key: AuthTextControllers.forgetPasswordFormKey,
               ),
               MyTextFormField(
                 controller:

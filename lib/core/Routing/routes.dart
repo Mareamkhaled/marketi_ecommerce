@@ -10,4 +10,5 @@ class Routes {
   static const String vertificationWithEmail = '/vertification_code_with_email';
   static const String createNewPassword = '/create_new_password';
   static const String congratulationScreen = '/congratulation_screen';
+  static const String home = '/home';
 }

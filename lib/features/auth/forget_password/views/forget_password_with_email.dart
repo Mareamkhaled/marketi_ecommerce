@@ -46,7 +46,6 @@ class ForgetPasswordWithEmail extends StatelessWidget {
                     image: Assets.assetsForgetWithEmail,
                     text:
                         "Please enter your email address to receive a verification code",
-                    // key: AuthTextControllers.forgetPasswordFormKey,
                   ),
                   MyTextFormField(
                     controller:

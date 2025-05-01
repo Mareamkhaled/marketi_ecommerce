@@ -27,12 +27,20 @@ class AuthTextControllers {
 
   static final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   static final GlobalKey<FormState> signUpFormKey = GlobalKey<FormState>();
-  static final GlobalKey<FormState> forgetPasswordFormKey = GlobalKey<FormState>();
   static final GlobalKey<FormState> createNewPasswordFormKey = GlobalKey<FormState>();
 
   // Clear controllers when not needed
   static void disposeControllers() {
     loginEmailController.dispose();
     loginPasswordController.dispose();
+    signUpEmailController.dispose();
+    signUpPasswordController.dispose();
+    signUpConfirmPasswordController.dispose();
+    signUpPhoneController.dispose();
+    signUpNameController.dispose();
+    forgetPasswordWithEmailController.dispose();
+    pinCodeController.dispose();
+    newPasswordController.dispose();
+    confirmNewPasswordController.dispose();
   }
 }

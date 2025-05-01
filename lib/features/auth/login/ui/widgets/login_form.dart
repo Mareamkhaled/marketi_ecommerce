@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
+import '../../../../../core/helpers/auth_text_controllers.dart';
 import '../../../../../core/helpers/form_validator.dart';
 import '../../../../../core/widgets/my_text_form_field.dart';
 
 class LogInForm extends StatefulWidget {
   const LogInForm({
     super.key,
-    required this.formKey,
-    required this.emailController,
-    required this.passwordController,
   });
-
-  final GlobalKey<FormState> formKey;
-  final TextEditingController emailController;
-  final TextEditingController passwordController;
 
   @override
   State<LogInForm> createState() => _LogInFormState();
@@ -27,11 +21,11 @@ class _LogInFormState extends State<LogInForm> {
       child: Column(
         children: [
           Form(
-            key: widget.formKey,
+            key: AuthTextControllers.loginFormKey,
             child: Column(
               children: [
                 MyTextFormField(
-                  controller: widget.emailController,
+                  controller: AuthTextControllers.loginEmailController,
                   validator: FormValidator.validateEmail,
                   hintText: "enter your email",
                   prefixIcon: const Icon(Icons.email),
@@ -49,7 +43,7 @@ class _LogInFormState extends State<LogInForm> {
                         ? const Icon(Icons.visibility_off)
                         : const Icon(Icons.visibility),
                   ),
-                  controller: widget.passwordController,
+                  controller: AuthTextControllers.loginPasswordController,
                   validator: FormValidator.validatePassword,
                   hintText: "enter your password",
                   prefixIcon: const Icon(Icons.lock),

@@ -5,4 +5,5 @@ class EndPoints {
   static const String sendForgetPasswordEmail = "sendPassEmail";
   static const String activeResetPass = "activeResetPass";
   static const String resetPassword = "resetPassword";
+  static const String signOut = "oAuth/signOut";
 }

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/errors/exceptions.dart';
@@ -21,6 +23,14 @@ class LoginCubit extends Cubit<LoginState> {
       emit(LoginSucces());
     } on ServerException catch (e) {
       emit(LoginFailed(errorMessage: e.errorModel.errorMessage));
+    }
+  }
+
+  signOut() async {
+    try {
+      await api.get(EndPoints.signOut);
+    } on ServerException catch (e) {
+      log(e.errorModel.errorMessage);
     }
   }
 }
