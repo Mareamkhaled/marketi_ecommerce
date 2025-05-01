@@ -1,14 +1,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'my_container.dart';
+
 import '../../../../../core/helpers/get_font_size.dart';
 import '../../../../../core/resources/app_colors.dart';
 import '../../../../../core/resources/app_images.dart';
 import '../../../../../core/resources/app_style.dart';
+import '../login/ui/widgets/my_container.dart';
 
-class LogInOptions extends StatelessWidget {
-  const LogInOptions({super.key});
+class OauthOptions extends StatelessWidget {
+  const OauthOptions({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -10,14 +10,14 @@ import '../../../../../core/resources/app_colors.dart';
 import '../../../../../core/resources/app_images.dart';
 import '../../../../../core/resources/app_style.dart';
 import '../../../../../core/widgets/custom_button.dart';
+import '../../../OAuth/o_auth_options.dart';
 import '../../logic/cubit/login_cubit.dart';
 import '../widgets/forget_password.dart';
-import '../widgets/log_in_options.dart';
 import '../widgets/login_form.dart';
 import '../widgets/sign_up_option.dart';
 
 class LoginScreen extends StatelessWidget {
- const LoginScreen({super.key});
+  const LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
@@ -73,8 +73,7 @@ class LoginScreen extends StatelessWidget {
                           },
                         ),
                   Gap(10.h),
-                  const LogInOptions(),
-                  // Gap(5.h),
+                  const OauthOptions(),
                   const SignUpOption(),
                   Gap(50.h)
                 ],

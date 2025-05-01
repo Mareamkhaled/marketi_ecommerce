@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import '../../../OAuth/o_auth_options.dart';
 import '../../logic/cubit/signup_cubit.dart';
 import '../../../../../core/Routing/routes.dart';
 import '../../../../../core/helpers/auth_text_controllers.dart';
 import '../../../../../core/resources/app_images.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import '../../../login/ui/widgets/log_in_options.dart';
 import '../widgets/signup_form.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -57,7 +57,7 @@ class SignupScreen extends StatelessWidget {
                             validateThensignup(context);
                           }),
                   const Gap(10),
-                  const LogInOptions(),
+                  const OauthOptions(),
                   SizedBox(height: 20.h),
                 ],
               ),
