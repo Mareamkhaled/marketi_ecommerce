@@ -45,7 +45,7 @@ class VertificationCodeWithEmail extends StatelessWidget {
               children: [
                 const ImageAndText(image: Assets.assetsVertificationWithEmail),
                 Text(AuthTextControllers.forgetPasswordWithEmailController.text,style: AppStyles.regular
-                        .copyWith(fontSize: 14, color: AppColors.myGrey)),
+                        .copyWith(fontSize: 16, color: AppColors.myGrey)),
                 MyPinCode(
                   controller: AuthTextControllers.pinCodeController,
                 ),

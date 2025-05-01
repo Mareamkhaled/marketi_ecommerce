@@ -21,7 +21,7 @@ class VertificationCodeWithPhone extends StatelessWidget {
           const ImageAndText(image: Assets.assetsVertificationWithPhone),
           Text("01012345678",
               style: AppStyles.regular
-                  .copyWith(fontSize: 10, color: AppColors.myGrey)),
+                  .copyWith(fontSize: 16, color: AppColors.myGrey)),
           const MyPinCode(),
           CustomButton.primary(
             text: "Verify code",

@@ -9,10 +9,10 @@ class MyPinCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: PinCodeTextField(
                   controller: controller,
-                  length: 4,
+                  length: 6,
                   appContext: context,
                   // autoDismissKeyboard: false,
                   // enablePinAutofill: true,
