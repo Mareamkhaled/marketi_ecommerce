@@ -20,7 +20,7 @@ class ForgetPassword extends StatelessWidget {
       const RememberMe(),
       TextButton(
         onPressed: () {
-          Navigator.pushNamed(context, Routes.forgetPasswordWithPhone);
+          Navigator.pushReplacementNamed(context, Routes.forgetPasswordWithPhone);
         },
         child: Text(
           "Forget Password?",

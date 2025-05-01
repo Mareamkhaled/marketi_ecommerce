@@ -40,7 +40,7 @@ class LoginScreen extends StatelessWidget {
           appBar: AppBar(
             leading: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, Routes.signup);
+                Navigator.pushReplacementNamed(context, Routes.signup);
               },
               child: Text(
                 "Skip",

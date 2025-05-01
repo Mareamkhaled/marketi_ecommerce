@@ -15,21 +15,20 @@ class AuthTextControllers {
       TextEditingController();
   static final TextEditingController signUpNameController =
       TextEditingController();
-  static final TextEditingController forgetPasswordWithEmailController=
+  static final TextEditingController forgetPasswordWithEmailController =
       TextEditingController();
-  static final TextEditingController pinCodeController=
+  static final TextEditingController pinCodeController =
       TextEditingController();
-  static final TextEditingController newPasswordController=
+  static final TextEditingController newPasswordController =
       TextEditingController();
-  static final TextEditingController confirmNewPasswordController=
+  static final TextEditingController confirmNewPasswordController =
       TextEditingController();
-
 
   static final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   static final GlobalKey<FormState> signUpFormKey = GlobalKey<FormState>();
-  static final GlobalKey<FormState> createNewPasswordFormKey = GlobalKey<FormState>();
+  static final GlobalKey<FormState> createNewPasswordFormKey =
+      GlobalKey<FormState>();
 
-  // Clear controllers when not needed
   static void disposeControllers() {
     loginEmailController.dispose();
     loginPasswordController.dispose();

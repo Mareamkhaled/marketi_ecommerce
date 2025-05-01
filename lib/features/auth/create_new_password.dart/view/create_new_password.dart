@@ -35,29 +35,31 @@ class CreateNewPassword extends StatelessWidget {
           appBar: const CustomAppBar(title: "Create New Password"),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              spacing: 20,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(Assets.assetsCreateNewPassword),
-                Text(
-                  "New password must be different from last password",
-                  style: AppStyles.regular
-                      .copyWith(fontSize: 16, color: AppColors.myBlack),
-                  textAlign: TextAlign.center,
-                ),
-                const NewPasswordForm(),
-                state is CreateNewPasswordLoading
-                    ? const CircularProgressIndicator()
-                    : CustomButton.primary(
-                        text: "Save",
-                        onPressed: () {
-                          context
-                              .read<ForgetPasswordCubit>()
-                              .createNewPassword(email);
-                        },
-                      ),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                spacing: 20,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(Assets.assetsCreateNewPassword),
+                  Text(
+                    "New password must be different from last password",
+                    style: AppStyles.regular
+                        .copyWith(fontSize: 16, color: AppColors.myBlack),
+                    textAlign: TextAlign.center,
+                  ),
+                  const NewPasswordForm(),
+                  state is CreateNewPasswordLoading
+                      ? const CircularProgressIndicator()
+                      : CustomButton.primary(
+                          text: "Save",
+                          onPressed: () {
+                            context
+                                .read<ForgetPasswordCubit>()
+                                .createNewPassword(email);
+                          },
+                        ),
+                ],
+              ),
             ),
           ),
         );

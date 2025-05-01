@@ -16,7 +16,15 @@ class ForgetPasswordWithEmail extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<ForgetPasswordCubit, ForgetPasswordState>(
       listener: (context, state) {
-        if (state is CodeSentState && context.mounted) {
+        if (state is CodeSentState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+          const  SnackBar(
+              content: Text(
+                "reset password email send successfully",
+              ),
+              backgroundColor: Colors.green,
+            ),
+          );
           Navigator.pushNamed(
             context,
             Routes.vertificationWithEmail,
@@ -60,8 +68,7 @@ class ForgetPasswordWithEmail extends StatelessWidget {
                           onPressed: () {
                             context
                                 .read<ForgetPasswordCubit>()
-                                .sendForgetPasswordCode()
-                                ;
+                                .sendForgetPasswordCode();
                           },
                         ),
                 ],
