@@ -15,9 +15,12 @@ class AuthTextControllers {
       TextEditingController();
   static final TextEditingController signUpNameController =
       TextEditingController();
+  static final TextEditingController forgetPasswordWithEmailController=
+      TextEditingController();
 
   static final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   static final GlobalKey<FormState> signUpFormKey = GlobalKey<FormState>();
+  static final GlobalKey<FormState> forgetPasswordFormKey = GlobalKey<FormState>();
 
   // Clear controllers when not needed
   static void disposeControllers() {

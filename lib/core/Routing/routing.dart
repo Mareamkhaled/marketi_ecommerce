@@ -7,6 +7,7 @@ import 'package:marketi_ecommerce/features/auth/signup/logic/cubit/signup_cubit.
 
 import '../../features/auth/create_new_password.dart/view/congratulation_screen.dart';
 import '../../features/auth/create_new_password.dart/view/create_new_password.dart';
+import '../../features/auth/forget_password/cubit/forget_password_cubit.dart';
 import '../../features/auth/forget_password/views/forget_password_with_email.dart';
 import '../../features/auth/forget_password/views/forget_password_with_phone.dart';
 import '../../features/auth/login/logic/cubit/login_cubit.dart';
@@ -26,10 +27,13 @@ class Routing {
     switch (settings.name) {
       case Routes.splash:
         return MaterialPageRoute(builder: (context) => const SplashScreen());
+
       case Routes.test:
         return MaterialPageRoute(builder: (context) => const TestScreen());
+
       case Routes.onboarding:
         return MaterialPageRoute(builder: (context) => OnboardingScreen());
+
       case Routes.login:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
@@ -41,6 +45,7 @@ class Routing {
             child: LoginScreen(),
           ),
         );
+
       case Routes.signup:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
@@ -51,22 +56,33 @@ class Routing {
                   ),
                   child: const SignupScreen(),
                 ));
-      case Routes.forgetWithPhone:
+
+      case Routes.forgetPasswordWithPhone:
         return MaterialPageRoute(
             builder: (context) => const ForgetPasswordWithPhone());
-      case Routes.forgetWithEmail:
+
+      case Routes.forgetPasswordWithEmail:
         return MaterialPageRoute(
-            builder: (context) => const ForgetPasswordWithEmail());
+            builder: (context) => BlocProvider(
+                  create: (context) => ForgetPasswordCubit(api: DioConsumer(Dio())),
+                  child: const ForgetPasswordWithEmail(),
+                ));
+
       case Routes.vertificationWithPhone:
         return MaterialPageRoute(
             builder: (context) => const VertificationCodeWithPhone());
+
       case Routes.vertificationWithEmail:
         return MaterialPageRoute(
             builder: (context) => const VertificationCodeWithEmail());
+
       case Routes.createNewPassword:
-        return MaterialPageRoute(builder: (context) => const CreateNewPassword());
+        return MaterialPageRoute(
+            builder: (context) => const CreateNewPassword());
+
       case Routes.congratulationScreen:
-        return MaterialPageRoute(builder: (context) => const CongratulationScreen());
+        return MaterialPageRoute(
+            builder: (context) => const CongratulationScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const NoRouteScreen());
