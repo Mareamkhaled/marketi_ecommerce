@@ -28,7 +28,7 @@ class CongratulationScreen extends StatelessWidget {
             CustomButton.primary(
               text: "Login",
               onPressed: () =>
-                  Navigator.pushReplacementNamed(context, Routes.login),
+                  Navigator.pushNamed(context, Routes.login),
             )
           ],
         ),
