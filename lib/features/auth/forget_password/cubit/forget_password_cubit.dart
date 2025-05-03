@@ -36,13 +36,13 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
     }
   }
 
-  createNewPassword(String email) async {
+  createNewPassword() async {
     emit(CreateNewPasswordLoading());
     try {
       await api.post(
         EndPoints.resetPassword,
         data: {
-          "email": email,
+          "email": AuthTextControllers.forgetPasswordWithEmailController.text,
           "password": AuthTextControllers.newPasswordController.text,
           "confirmPassword":
               AuthTextControllers.confirmNewPasswordController.text,

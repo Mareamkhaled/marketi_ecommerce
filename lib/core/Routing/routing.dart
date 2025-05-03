@@ -19,6 +19,7 @@ import '../../features/onboarding/ui/screens/onboarding_screen.dart';
 import '../../features/splash/ui/screens/splash_screen.dart';
 import '../../test_screen.dart';
 import '../api/dio_consumer.dart';
+import '../helpers/service_locator.dart';
 import 'routes.dart';
 
 class Routing {
@@ -68,7 +69,7 @@ class Routing {
       case Routes.forgetPasswordWithEmail:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
-            create: (context) => ForgetPasswordCubit(api: DioConsumer(Dio())),
+            create: (context) => getIt<ForgetPasswordCubit>(),
             child: const ForgetPasswordWithEmail(),
           ),
         );
@@ -79,8 +80,8 @@ class Routing {
 
       case Routes.vertificationWithEmail:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => ForgetPasswordCubit(api: DioConsumer(Dio())),
+          builder: (context) => BlocProvider.value(
+            value: getIt<ForgetPasswordCubit>(),
             child: const VertificationCodeWithEmail(),
           ),
         );
@@ -88,11 +89,11 @@ class Routing {
       case Routes.createNewPassword:
         return MaterialPageRoute(
           builder: (context) {
-            final args = settings.arguments as Map<String, dynamic>?;
-            final email = args?['email'];
-            return BlocProvider(
-              create: (context) => ForgetPasswordCubit(api: DioConsumer(Dio())),
-              child: CreateNewPassword(email: email),
+            // final args = settings.arguments as Map<String, dynamic>?;
+            // final email = args?['email'];
+            return BlocProvider.value(
+              value: getIt<ForgetPasswordCubit>(),
+              child: const CreateNewPassword(),
             );
           },
         );

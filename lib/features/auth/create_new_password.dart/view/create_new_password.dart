@@ -11,8 +11,8 @@ import '../../forget_password/cubit/forget_password_cubit.dart';
 import '../widgets/new_password_form.dart';
 
 class CreateNewPassword extends StatelessWidget {
-  const CreateNewPassword({super.key, required this.email});
-  final String email;
+  const CreateNewPassword({super.key,});
+  // final String email;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ForgetPasswordCubit, ForgetPasswordState>(
@@ -55,7 +55,7 @@ class CreateNewPassword extends StatelessWidget {
                           onPressed: () {
                             context
                                 .read<ForgetPasswordCubit>()
-                                .createNewPassword(email);
+                                .createNewPassword();
                           },
                         ),
                 ],
