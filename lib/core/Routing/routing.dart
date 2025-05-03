@@ -1,10 +1,7 @@
-// ignore_for_file: prefer_relative_imports
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:marketi_ecommerce/features/auth/signup/logic/cubit/signup_cubit.dart';
 
+import '../../features/auth/signup/logic/cubit/signup_cubit.dart';
 import '../../features/auth/create_new_password.dart/view/congratulation_screen.dart';
 import '../../features/auth/create_new_password.dart/view/create_new_password.dart';
 import '../../features/auth/forget_password/cubit/forget_password_cubit.dart';
@@ -32,7 +29,9 @@ class Routing {
       case Routes.test:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
-                  create: (context) => LoginCubit(api: DioConsumer(Dio())),
+                  create: (context) => LoginCubit(
+                    api: getIt<DioConsumer>(),
+                  ),
                   child: const TestScreen(),
                 ));
 
@@ -43,9 +42,7 @@ class Routing {
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
             create: (context) => LoginCubit(
-              api: DioConsumer(
-                Dio(),
-              ),
+              api: getIt<DioConsumer>(),
             ),
             child: const LoginScreen(),
           ),
@@ -55,9 +52,7 @@ class Routing {
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
                   create: (context) => SignupCubit(
-                    api: DioConsumer(
-                      Dio(),
-                    ),
+                    api: getIt<DioConsumer>(),
                   ),
                   child: const SignupScreen(),
                 ));

@@ -7,5 +7,16 @@ import '../api/dio_consumer.dart';
 final getIt = GetIt.instance;
 
 void setup() {
-  getIt.registerSingleton(ForgetPasswordCubit(api: DioConsumer(Dio())));
+  getIt.registerLazySingleton(
+    () => ForgetPasswordCubit(
+      api: DioConsumer(
+        Dio(),
+      ),
+    ),
+  );
+  getIt.registerLazySingleton(
+    () => DioConsumer(
+      Dio(),
+    ),
+  );
 }
